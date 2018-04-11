@@ -1,0 +1,2 @@
+cd "\Program Files\MongoDB\Server\3.2\bin"
+mongorestore /h localhost /d scadaDB  /dir C:\jack\work\svn\PR.WizPlant.Integrate\trunk\doc\data\scadaDB /drop

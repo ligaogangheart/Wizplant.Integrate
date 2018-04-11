@@ -1,0 +1,22 @@
+以下命令都在mongodb客户端工具中执行
+
+1.创建数据库scadaDB
+use scadaDB
+
+2.创建数据集合(表）(如果没有创建集合，在执行操作操作时会自动创建)
+   use scadaDB
+   db.createCollection("ScadaData");
+   db.createCollection("CurrentScadaData");    
+
+3.为数据集合(表）建立索引:
+	  use scadaDB
+          db.ScadaData.ensureIndex({"TagNo": 1})
+	  db.ScadaData.ensureIndex({"Name": 1})
+	  db.ScadaData.ensureIndex({"SiteName": 1})
+	  db.ScadaData.ensureIndex({"TimeStamp": 1})
+
+	  db.CurrentScadaData.ensureIndex({"TagNo": 1})
+	  db.CurrentScadaData.ensureIndex({"Name": 1})
+	  db.CurrentScadaData.ensureIndex({"SiteName": 1})
+	  db.CurrentScadaData.ensureIndex({"TimeStamp": 1})
+		

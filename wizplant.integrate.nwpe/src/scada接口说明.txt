@@ -1,0 +1,39 @@
+统一提供服务地址：
+http://..../ScadaService.ashx
+参数：methodName
+      userToken
+      其他，不同的服务方法不同
+
+旧有服务迁移：
+1. GetDeviceMeasurePoint.ashx
+   methodName = 001
+   objId = 对象Id
+
+2.GetDeviceObjIdByChildObjId.ashx
+   调用原来的Rest服务 ConfigDetailInfoWcfRestService.svc/GetAssociationObjects
+   输入参数：Guid objId, Guid associationId, int associationRole
+   返回：IList<PrwObject>
+
+3.GetInteractivePointData.ashx
+   methodName = 002 // 返回以模型名称对应的测点值集合
+   pointListConfig = 测点集
+   --无需提供 date = 日期，6位数字，为当天时可以不提供
+   isShowDetail ＝ 是否显示显示部件名称，0或1，不需要显示部件名称时可以不提供
+
+4.GetLineChartShowData.ashx
+   methodName = 003 // 返回测点值的明细信息
+   pointIdStr = 测点id列表，用'|'分隔
+   date = 日期，6位数字，为当天时可以不提供
+   onlyLast ＝ 1 或不提供 是否只显示对应测点最近（新）的值，0或1，只显示最近的值（1）时可以不提供。
+
+5.GetMeasurePointData.ashx
+   methodName = 003 // 返回测点值的明细信息
+   pointIdStr = 测点id列表，用'|'分隔   
+   date = 日期，6位数字，为当天时可以不提供
+   onlyLast ＝ 0 是否只显示对应测点最近（新）的值，0或1，只显示最近的值（1）时可以不提供。
+
+6.GetSVGPointData.ashx
+   methodName = 004 // 返回以测点Id对应的测点值集合
+   pointListConfig = 测点集
+   --无需提供 date = 日期，6位数字，为当天时可以不提供
+   isShowDetail ＝ 是否显示显示部件名称，0或1，不需要显示部件名称时可以不提供

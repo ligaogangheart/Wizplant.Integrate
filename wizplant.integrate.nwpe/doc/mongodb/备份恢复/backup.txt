@@ -1,0 +1,2 @@
+cd "\Program Files\MongoDB\Server\3.2\bin"
+mongodump -h localhost:9920 -d scadaDB -o d:/mongodbbackup/

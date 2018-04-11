@@ -1,0 +1,23 @@
+0.确保mongodb服务实例已经处于运行状态!
+0.重要：mongodb 区分大小写,请注意大小写！
+0.打开cmd命令行窗口，并cd到mongodb安装的bin目录，bin目录路径见第1步安装
+
+
+1.使用普通配置文件(mongodb*_nossl.conf，没有启用授权和ssl）时
+	执行 mongo.exe ip:port （需要将ip替换为实际的实例安装服务器的ip,将port替换为实例端口）
+
+	当此服务实例是副本集的组成实例时：
+	如果提示行中显示SECONDARY字样，表示此时连接的是从服务实例，如果显示PRIMARY表示感谢连接的是主服务实例。
+	请保证在主服务实例中进行操作。
+
+        退出mongodb服务实例使用命令exit
+
+2.使用普通配置文件(mongodb*.conf，启用了授权和ssl）时
+	执行 mongo.exe -ssl --sslAllowInvalidCertificates -uscadaUser -pPEadmin ip:port/scadaDB （需要将ip替换为实际的实例安装服务器的ip,将port替换为实例端口）
+	
+	当此服务实例是副本集的组成实例时：
+	如果提示行中显示SECONDARY字样，表示此时连接的是从服务实例，如果显示PRIMARY表示感谢连接的是主服务实例。
+	请保证在主服务实例中进行操作。
+
+        退出mongodb服务实例使用命令exit
+    

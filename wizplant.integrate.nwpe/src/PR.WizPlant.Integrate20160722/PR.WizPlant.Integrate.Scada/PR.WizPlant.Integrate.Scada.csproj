@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BB3FC85-1BD1-43BA-B08C-F516A6D604F1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PR.WizPlant.Integrate.Scada</RootNamespace>
+    <AssemblyName>PR.WizPlant.Integrate.Scada</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>C:\sharelib\Common.Logging\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1211">
+      <HintPath>C:\sharelib\Common.Logging\Common.Logging.Log4Net1211.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>C:\sharelib\Common.Logging\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>C:\sharelib\CSharpDriver-2.2.3\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>C:\sharelib\CSharpDriver-2.2.3\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>C:\sharelib\CSharpDriver-2.2.3\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BufferHelper.cs" />
+    <Compile Include="Consts.cs" />
+    <Compile Include="Dao\MongDbCurrentScadaService.cs" />
+    <Compile Include="Dao\MongDbScadaService.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dao\MongDbScadaMapService.cs" />
+    <Compile Include="Dao\MongoDbHelper.cs" />
+    <Compile Include="DisConnectedReason.cs" />
+    <Compile Include="ConnectState.cs" />
+    <Compile Include="Entities\ScadaData.MongoDb.cs" />
+    <Compile Include="Entities\ScadaObjectMap.cs" />
+    <Compile Include="Entities\ScadaData.cs" />
+    <Compile Include="Dao\IScadaService.cs" />
+    <Compile Include="Dao\MongDbScadaServiceBase.cs" />
+    <Compile Include="Entities\ScadaObjectMap.MongoDb.cs" />
+    <Compile Include="PoolManager.cs" />
+    <Compile Include="ScadaClient.cs" />
+    <Compile Include="PackageKey.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScadaDataEventArgs.cs" />
+    <Compile Include="CompletedEventArgs.cs" />
+    <Compile Include="DisConnectedEventArgs.cs" />
+    <Compile Include="ErrorEventArgs.cs" />
+    <Compile Include="Service\ScadaDataService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,9 @@
+http://10.181.48.144:8085/Mobile/RestServicePortal.svc/DoAction
+
+http://localhost/PR.WizPlant.Web/Mobile/RestServicePortal.svc/DoAction
+
+
+db.ScadaMap.update({"TagNo":"43678"},{$set:{"ObjectId":"f346619b-12fa-459e-b318-b11ae8300b03","Name":"500kV景思甲线高抗5033DK1隔离开关-A相"}})  
+
+db.ScadaMap.update({"TagNo":"43705"},{$set:{"ObjectId":"9cc53760-3821-432b-92f2-c61cf7f7c08d","Name":"500kV景思乙线高抗5013DK1隔离开关-A相"}})  
+

@@ -1,0 +1,56 @@
+db.ScadaData.mapReduce(
+   function() {emit(this.TagNo,);},  //map º¯Êý
+   function(key,values) {return reduceFunction},   //reduce º¯Êý
+   {
+      out: collection,
+      query: document,
+      sort: document,
+      limit: number
+   }
+)
+
+db.runCommand(  
+{ mapreduce: "ScadaData",  
+map: function () { emit(this.TagNo, 1); },  
+reduce: function (key, values) { return Array.sum(values); },  
+out: "mrout" })  
+
+
+values.forEach(function(val){ 
+    if (val.UpdateTime < "2016-01-01")
+{    
+    res.count+=val.count;
+}
+
+map=function (){
+  emit(this.TagNo,0)
+}
+
+reduce=function (key,values){
+ var res=0;
+ var idx=0;
+var prevalue;
+
+values.forEach(function(val){ 
+    if (idx > 0)
+    {
+	if (val.Value != prevalue)
+        {
+	res++;
+	prevalue = val.Value;
+        }
+    }
+    else
+    {
+       prevalue = val.Value;
+    }
+idx++;
+}
+); 
+return res;
+}
+
+finalizeFun=function (key,reduceResult){
+ return reduceResult;}
+
+db.ScadaData.mapReduce(map,reduce,{query:{TimeStamp:{$gte:new ISODate("2016-08-01"),$lt:new ISODate("2016-09-01")}},out:"mr5"})

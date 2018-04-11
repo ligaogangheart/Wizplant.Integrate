@@ -1,0 +1,39 @@
+--定义一个新的副本集配置
+config = {_id: "scadaReplSet", members: []}
+
+-- 添加第1个要加入副本集的服务实例，其中_id: 0表示第1个,不能重复,ip:host请修改为服务实例的实际ip地址和端口
+config.members.push({_id: 0, host: "ip:host"})
+
+-- 添加第2个要加入副本集的服务实例，其中_id: 1表示第2个,不能重复,ip:host请修改为服务实例的实际ip地址和端口
+config.members.push({_id: 1, host: "ip:host"})
+
+-- ... 依此类推可以添加更多服务实例到副本集
+
+-- 初始化副本集配置
+rs.initiate(config)
+
+-- 设置本服务实例为此副本集的主服务实例
+rs.isMaster()
+
+-- 查看副本集的状态
+rs.status()
+
+
+
+
+
+
+
+---------------新服务配置到此结束，以下是在后面增加mongodb运行实例时使用-------------------------------
+--增加副本集
+rs.add("localhost:9921")
+-- 或者
+var config=rs.config()   
+config.members.push({_id: 1, host: "localhost:9921"})
+ rs.reconfig(config)    
+
+
+
+
+
+

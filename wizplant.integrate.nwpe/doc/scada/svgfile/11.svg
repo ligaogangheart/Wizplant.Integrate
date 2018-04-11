@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns:cge="http://iec.ch/TC57/2005/SVG-schema#" xmlns:xlink="http://www.w3.org/1999/xlink" onload="try{initialize(evt);} catch(e){}" xmlns="http://www.w3.org/2000/svg" xmlns:cim="http://iec.ch/TC57/2003/CIM-schema-cim10#" xmlns:DF8003="http://DF8003.com/SVGEX-schema#" viewBox="191 -472 328 132" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+ <g id="whole_graph" fileType="0" areaN="0" >
+  <defs>
+   <menu id="myCustomMenu" >
+    <header>CustomMenu</header>
+    <menu display="none" id="breaker_menu" >
+     <header>断路器</header>
+     <item onactivate="closewitch()" id="me_c" >闭合</item>
+     <item onactivate="openwitch()" id="me_uc" >断开</item>
+     <item onactivate="attr(evt)" >查看属性</item>
+    </menu>
+    <menu display="none" id="switch_menu" >
+     <header>刀闸</header>
+     <item onactivate="closewitch()" id="me_c" >闭合</item>
+     <item onactivate="openwitch()" id="me_uc" >断开</item>
+     <item onactivate="attr(evt)" >查看属性</item>
+    </menu>
+    <menu display="none" id="transformer_menu" >
+     <header>变压器</header>
+     <item onactivate="attr(evt)" >查看属性</item>
+    </menu>
+    <item onactivate="data_update()" >更新</item>
+    <item onactivate="paint()" >着色</item>
+    <separator/>
+    <item action="ZoomIn" >放大(&amp;I)</item>
+    <item action="ZoomOut" >缩小(&amp;O)</item>
+    <item action="OriginalView" >原始检视(&amp;w)</item>
+    <separator/>
+    <item action="Quality" >较高品质(&amp;Q)</item>
+    <item action="Pause" >(&amp;Pause)</item>
+    <item action="Mute" >(&amp;Mute)</item>
+    <separator/>
+    <item action="Find" >寻找(&amp;F)</item>
+    <item action="FindAgain" >再次寻找(&amp;A)</item>
+    <menu id="spe_find" >
+     <header>特殊寻找</header>
+     <item onactivate="findByEqu(evt)" id="findByEqu" >设备</item>
+     <item onactivate="findByLine(evt)" id="findByLine" >线路</item>
+    </menu>
+    <separator/>
+    <item action="Copy" >复制选取的文字(&amp;C)</item>
+    <item action="CopySVG" >复制SVG(&amp;C)</item>
+    <item action="ViewSVG" >检视SVG(&amp;G)</item>
+    <item action="ViewSource" >检视源码(&amp;E)</item>
+    <item action="SaveAs" >另存SVG(&amp;S)...</item>
+    <item action="SaveSnapshotAs" >保存当前状态(&amp;C)...</item>
+    <separator/>
+    <item action="Help" >帮助(&amp;H)...</item>
+    <item action="About" >关于 SVG Viewer...</item>
+    <item action="showAbout(evt)" id="aboutme" >关于(&amp;A)</item>
+   </menu>
+   <symbol id="Tag:shape0" >
+    <image width="25" x="0" xlink:href="image/限电.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape1" >
+    <image width="25" x="0" xlink:href="image/保电.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape2" >
+    <image width="25" x="0" xlink:href="image/检修.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape3" >
+    <image width="25" x="0" xlink:href="image/相序不对.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape4" >
+    <image width="25" x="0" xlink:href="image/相序未校.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape5" >
+    <image width="25" x="0" xlink:href="image/检修.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape6" >
+    <image width="25" x="0" xlink:href="image/接地牌.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape7" >
+    <image width="25" x="0" xlink:href="image/接地牌.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape8" >
+    <image width="25" x="0" xlink:href="image/接地牌.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape9" >
+    <image width="25" x="0" xlink:href="image/注释1.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape10" >
+    <image width="25" x="0" xlink:href="image/注释2.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape11" >
+    <image width="25" x="0" xlink:href="image/注释3.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape12" >
+    <image width="25" x="0" xlink:href="image/退出-运行.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape13" >
+    <image width="25" x="0" xlink:href="image/合闸.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape14" >
+    <image width="25" x="0" xlink:href="image/分闸.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape15" >
+    <image width="25" x="0" xlink:href="image/禁止操作.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape16" >
+    <image width="25" x="0" xlink:href="image/站控.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape17" >
+    <image width="25" x="0" xlink:href="image/带电作业.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape18" >
+    <image width="25" x="0" xlink:href="image/退出-重合闸.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape19" >
+    <image width="25" x="0" xlink:href="image/退出-备自投.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape20" >
+    <image width="25" x="0" xlink:href="image/退出-保护.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape21" >
+    <image width="25" x="0" xlink:href="image/冷备用.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape22" >
+    <image width="25" x="0" xlink:href="image/传动1.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape23" >
+    <image width="25" x="0" xlink:href="image/传动2.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape24" >
+    <image width="25" x="0" xlink:href="image/传动3.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape25" >
+    <image width="25" x="0" xlink:href="image/有人工作.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape26" >
+    <image width="25" x="0" xlink:href="image/重要.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape27" >
+    <image width="25" x="0" xlink:href="image/高压.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape28" >
+    <image width="25" x="0" xlink:href="image/禁止报警.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <symbol id="Tag:shape29" >
+    <image width="25" x="0" xlink:href="image/禁止刷新.png" y="-25" height="25" transform="matrix(1 0 0 -1 0 0)" />
+   </symbol>
+   <style type="text/css" ><![CDATA[
+.BV-0KV { stroke:rgb(127,127,127);fill:none}
+.BKBV-0KV { stroke:rgb(127,127,127);fill:rgb(127,127,127)}
+.BV-3KV { stroke:rgb(154,205,50);fill:none}
+.BKBV-3KV { stroke:rgb(154,205,50);fill:rgb(154,205,50)}
+.BV-6KV { stroke:rgb(139,139,0);fill:none}
+.BKBV-6KV { stroke:rgb(139,139,0);fill:rgb(139,139,0)}
+.BV-10KV { stroke:rgb(205,102,29);fill:none}
+.BKBV-10KV { stroke:rgb(205,102,29);fill:rgb(205,102,29)}
+.BV-15KV { stroke:rgb(0,255,0);fill:none}
+.BKBV-15KV { stroke:rgb(0,255,0);fill:rgb(0,255,0)}
+.BV-20KV { stroke:rgb(0,255,0);fill:none}
+.BKBV-20KV { stroke:rgb(0,255,0);fill:rgb(0,255,0)}
+.BV-35KV { stroke:rgb(255,255,0);fill:none}
+.BKBV-35KV { stroke:rgb(255,255,0);fill:rgb(255,255,0)}
+.BV-66KV { stroke:rgb(255,255,0);fill:none}
+.BKBV-66KV { stroke:rgb(255,255,0);fill:rgb(255,255,0)}
+.BV-110KV { stroke:rgb(255,0,0);fill:none}
+.BKBV-110KV { stroke:rgb(255,0,0);fill:rgb(255,0,0)}
+.BV-220KV { stroke:rgb(139,28,98);fill:none}
+.BKBV-220KV { stroke:rgb(139,28,98);fill:rgb(139,28,98)}
+.BV-330KV { stroke:rgb(160,32,240);fill:none}
+.BKBV-330KV { stroke:rgb(160,32,240);fill:rgb(160,32,240)}
+.BV-500KV { stroke:rgb(255,140,0);fill:none}
+.BKBV-500KV { stroke:rgb(255,140,0);fill:rgb(255,140,0)}
+.BV-750KV { stroke:rgb(255,0,0);fill:none}
+.BKBV-750KV { stroke:rgb(255,0,0);fill:rgb(255,0,0)}
+.BV-22KV { stroke:rgb(255,255,255);fill:none}
+.BKBV-22KV { stroke:rgb(255,255,255);fill:rgb(255,255,255)}
+.BV-380KV { stroke:rgb(255,255,255);fill:none}
+.BKBV-380KV { stroke:rgb(255,255,255);fill:rgb(255,255,255)}
+.nopower {stroke:grey;fill:none}
+.choice {stroke:rgb(255,0,0);fill:none}
+.bknopower {stroke:grey;fill:grey}
+.bkchoice {stroke:rgb(255,0,0);fill:rgb(255,0,0)}
+.busnopower {stroke:grey;fill:grey}
+.buschoice {stroke:rgb(255,0,0);fill:rgb(255,0,0)}]]></style>
+  </defs>
+  <script xlink:href="xl.js" language="JavaScript" />
+  <g id="Head_Layer" >
+   <rect width="338" x="186" y="-477" fill="rgb(0,0,0)" height="142" />
+  </g>
+  <g id="MotifButton_Layer" >
+   <g CmdStr="vvcffg" style="fill-opacity:0" ImageFlag="0" >
+    <a xlink:href="javascript:void(changeSVG(''))" >
+     <polygon points="191,-471 188,-474 188,-337 191,-340 191,-471" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" />
+     <polygon points="191,-471 188,-474 521,-474 518,-471 191,-471" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" />
+     <polygon points="191,-340 188,-337 521,-337 518,-340 191,-340" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" />
+     <polygon points="518,-471 521,-474 521,-337 518,-340 518,-471" fill="rgb(0,0,0)" stroke="rgb(0,0,0)" />
+     <rect width="327" x="191" y="-471" fill="rgb(0,255,0)" height="131" stroke="rgb(0,255,0)" />
+     <rect width="327" x="191" y="-471" qtmmishow="hidden" height="131" stroke="rgb(255,0,0)" />
+    </a>
+   </g>
+  </g>
+ </g>
+</svg>

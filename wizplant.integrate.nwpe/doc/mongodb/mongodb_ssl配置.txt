@@ -1,0 +1,16 @@
+1. 配置服务增加启动参数 
+1.1 在启动服务时增加参数--sslMode requireSSL（启用ssl）
+1.2 在启动服务中增加参数 --sslPEMKeyFile  $PEMFilepath (此处使用自创建的pem文件，如何创建pem文件请参考相关资料）
+2.3 启动服务 mongod ...
+
+3.客户端连接
+3.1 mongo命令行连接：mongo.exe --ssl --sslAllowInvalidCertificates 192.168.66.167:9920 （测试环境用）			
+	mongo.exe -ssl --sslAllowInvalidCertificates -uscadaUser -pPEadmin 192.168.66.167:9920/scadaDB （测试环境用）	
+3.2 连接字串：
+	# 未启用数据库授权
+	mongodb://10.181.48.148:9920,10.181.48.148:9921/scadaDB?ssl=true&amp;sslverifycertificate=false&amp;readPreference=secondaryPreferred
+        # 启用数据库授权
+	mongodb://scadaUser:PEadmin@192.168.66.167:9920,192.168.66.167:9921/scadaDB?ssl=true&amp;sslverifycertificate=false&amp;readPreference=secondaryPreferred
+	sslverifycertificate参数表示是否校验证书
+结束
+

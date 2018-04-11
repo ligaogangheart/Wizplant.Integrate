@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soa="http://soa.csg.cn" name="YDTF-IGATE" targetNamespace="http://soa.csg.cn" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soa.csg.cn">
+      <xsd:complexType name="QueryDeviceInfoByIdResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="replyCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceGisDTO" type="soa:DeviceGisDTO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LstTechParamList">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="lstTechParamItem" type="soa:LstTechParamItem" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="QueryDeviceInfoByIdRequest">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceId" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="LstTechParamItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="classifyId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="classifyName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="techParamId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="columnName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="techParamName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="techParamValue" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="units" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isMandatory" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isShow" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="sortNo" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dataType" type="xsd:int" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isVendorFill" type="xsd:integer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DeviceGisDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="classifyId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="classifyName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isCapitalAssets" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isCapitalAssetsStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="proprietorCompanyOname" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="proprietorCompanyOid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="baseVoltageId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="baseVoltageName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="voltagePageShow" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isVirtualDevice" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isVirtualDeviceStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="measurementUnit" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="amount" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="manufacturer" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="manufacturerId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="latestManufacturer" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="vendor" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="vendorId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceModel" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="leaveFactoryNo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="leaveFactoryDateStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="warrantyPeriod" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="plantTransferDateStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="assetState" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="assetStateStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="statusDateStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="runningCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="latitude" type="xsd:double" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="longitude" type="xsd:double" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="latitudeStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="longitudeStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="altitude" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="topography" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="topographyStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="bureauUnitsOid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="bureauUnitsOname" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dispatchLevel" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dispatchLevelStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="runmanageOid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="runmanageOName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="vindicateOid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="vindicateOName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="placeCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="flName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="flCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="installCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="remark" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="powerGridFlag" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="powerGridFlagStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ownerStationOid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="ownerStationOName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="countyCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="oldClassifyFullPath" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="oldAliasName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isLabel" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isLabelStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isAssambly" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isAssamblyStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isShareDevice" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="isShareDeviceStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="dataSource" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="licensePlateNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="vindicatorUnitOname" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="vindicatorUnitOid" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="capitalAssetsCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="installationLocation" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="proprietorOwner" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="proprietorOwnerStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="useLife" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceModelId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="deviceId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="retireDateStr" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="functionLocationId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="classifyCode" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="classifyFullPath" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="nominalVoltage" type="xsd:integer" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="parentFLId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="parentFLName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="bayId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="bayName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="siteId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="siteName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="bureauName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="fullPath" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="centerSubstationId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="centerSubstationName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="subsIdOfDisDevice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="subsNameOfDisDevice" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="inventoryTaskNo" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="assetDeviceId" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="lstTechParamList" type="soa:LstTechParamList" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryDeviceInfoByIdRequest" type="soa:QueryDeviceInfoByIdRequest" />
+      <xsd:element name="queryDeviceInfoByIdResponse" type="soa:QueryDeviceInfoByIdResponse" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="queryDeviceInfoByIdHeader" />
+  <wsdl:message name="queryDeviceInfoByIdRequest">
+    <wsdl:part name="queryDeviceInfoByIdRequest" element="soa:queryDeviceInfoByIdRequest" />
+  </wsdl:message>
+  <wsdl:message name="queryDeviceInfoByIdResponse">
+    <wsdl:part name="queryDeviceInfoByIdResponse" element="soa:queryDeviceInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SOAServicePort">
+    <wsdl:operation name="queryDeviceInfoById">
+      <wsdl:input message="soa:queryDeviceInfoByIdRequest" />
+      <wsdl:output message="soa:queryDeviceInfoByIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SOAServiceBinding" type="soa:SOAServicePort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="queryDeviceInfoById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YDTF-IGATE">
+    <wsdl:port name="SOAService" binding="soa:SOAServiceBinding">
+      <soap:address location="http://10.111.8.227:9734/0D44ECD5-BECE-4B97-AD89-55FC01DB6D3C" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

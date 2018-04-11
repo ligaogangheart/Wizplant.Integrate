@@ -1,0 +1,46 @@
+map=function(){emit({TagNo:this.TagNo,SiteName:this.SiteName,Name:this.Name,Type:this.Type,MessureType:this.MessureType},{finished:false,count:0,data:[{TimeStamp:this.TimeStamp,Value:this.Value}]});}
+
+
+reduce=function (key,values){ 
+var result = {finished:false,count:0,data:[]};
+values.forEach(function(val){
+ if (val.finished)
+{
+	return val;
+}
+val.data.forEach(
+function(item){
+	result.count++;
+	result.data.push(item);
+ 	if (global_StartTime && item.TimeStamp <= global_StartTime)
+	{
+    		result.finished = true;
+		return result;
+	}
+}
+);
+
+});  
+return result;
+}
+
+finalize=function(key,rval){
+
+    var result = {Key:key,count:rval.count,data:[]};
+    var i = 0;
+    rval.data.forEach(   	
+	function(item){
+         if (++i > 10)
+	{
+		return result;
+	}
+	
+	result.data.push(item);
+        result.count = i; 	
+	});
+     
+    return result;
+}
+
+
+db.ScadaData.mapReduce(map,reduce,{out:"mr4",query:{ TagNo : { "$in" : ["13226", "13113", "13225", "13122", "13227", "13114", "12992"] }},sort:{TimeStamp:-1},scope:{global_StartTime:new Date(2016,6,7,0,0,0),global_EndTime:new Date(2016,6,7,23,59,59),global_Interval:60}, finalize:finalize})

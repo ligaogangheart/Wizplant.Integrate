@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"scadaDB.ScadaData"},{"v":1,"key":{"TagNo":1.0},"name":"TagNo_1","ns":"scadaDB.ScadaData"},{"v":1,"key":{"Name":1.0},"name":"Name_1","ns":"scadaDB.ScadaData"},{"v":1,"key":{"SiteName":1.0},"name":"SiteName_1","ns":"scadaDB.ScadaData"},{"v":1,"key":{"TimeStamp":1.0},"name":"TimeStamp_1","ns":"scadaDB.ScadaData"}]}

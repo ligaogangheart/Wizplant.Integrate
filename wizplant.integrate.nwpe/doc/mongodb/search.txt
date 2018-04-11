@@ -1,0 +1,5 @@
+db.ScadaData.find({"SiteName":"PE_NE",TimeStamp:{$gt:new ISODate("2016-07-08T16:00:00.000"),$lt:new ISODate("2016-07-12T15:23:59.000")},Type:1},{_id:0,SiteName:0,MessureType:0,Type:0}).sort({TimeStamp:-1})
+
+查找宁洱变（PE_NE)，从时间范围（2016-07-09 到 2016-07-12)（含）中所有遥信变化值，按变化时间倒序排序。条件可以根据需要变更
+查找结果中不显示_id,SiteName,Type,MessureType.
+注意：显示的时间为格林威治时间，换算成北京时间需要+8小时。

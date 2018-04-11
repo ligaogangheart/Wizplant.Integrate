@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BD75DFAA-9585-47BE-B392-45C2198EDF3C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PR.WizPlant.Integrate.WcfHost</RootNamespace>
+    <AssemblyName>PR.WizPlant.Integrate.WcfHost</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.0\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.3.1\lib\net40\Common.Logging.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.3.1\lib\net40\Common.Logging.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Common.Logging.Log4Net1215, Version=3.3.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Log4Net1215.3.3.1\lib\net40\Common.Logging.Log4Net1215.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AnyShareRestWcfService.svc" />
+    <Content Include="lib\NetVideoActiveX23.cab" />
+    <Content Include="ScadaRestWcfService.svc" />
+    <Content Include="lib\RealPlayX.CAB" />
+    <Content Include="VideoMonitor.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AnyShareRestWcfService.svc.cs">
+      <DependentUpon>AnyShareRestWcfService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="AnyShareService.ashx.cs">
+      <DependentUpon>AnyShareService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CrossBorderManagementService.ashx.cs">
+      <DependentUpon>CrossBorderManagementService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CsgiiSBTZOfflineDataService.ashx.cs">
+      <DependentUpon>CsgiiSBTZOfflineDataService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="CsgiiSBTZService.ashx.cs">
+      <DependentUpon>CsgiiSBTZService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="IScadaRestWcfService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScadaRestWcfService.svc.cs">
+      <DependentUpon>ScadaRestWcfService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="ShowMonitorHandler.ashx.cs">
+      <DependentUpon>ShowMonitorHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="utilities\ScadaHelper.cs" />
+    <Compile Include="utilities\SerializeHelper.cs" />
+    <Compile Include="ScadaService.ashx.cs">
+      <DependentUpon>ScadaService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="utilities\VideoMonitorHelper.cs" />
+    <Compile Include="VideoMonitor.aspx.cs">
+      <DependentUpon>VideoMonitor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VideoMonitor.aspx.designer.cs">
+      <DependentUpon>VideoMonitor.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CsgiiSBTZService.ashx" />
+    <Content Include="data.json" />
+    <Content Include="AnyShareService.ashx" />
+    <Content Include="ShowMonitorHandler.ashx" />
+    <Content Include="packages.config" />
+    <Content Include="CsgiiSBTZOfflineDataService.ashx" />
+    <Content Include="CrossBorderManagementService.ashx" />
+    <None Include="Properties\PublishProfiles\inte.pubxml" />
+    <None Include="Properties\PublishProfiles\sdfs.pubxml" />
+    <None Include="Properties\PublishProfiles\ss.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="ScadaService.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PR.WizPlant.Integrate.AnyShare\PR.WizPlant.Integrate.AnyShare.csproj">
+      <Project>{afd5a0cf-e584-4cae-9a41-db600e2ade5f}</Project>
+      <Name>PR.WizPlant.Integrate.AnyShare</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PR.WizPlant.Integrate.CrossBorderManagement\PR.WizPlant.Integrate.CrossBorderManagement.csproj">
+      <Project>{722494c0-bc2e-481a-a0e9-9aa7f43f1c5a}</Project>
+      <Name>PR.WizPlant.Integrate.CrossBorderManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PR.WizPlant.Integrate.Csgii\PR.WizPlant.Integrate.Csgii.csproj">
+      <Project>{9d799ffb-2996-4db7-9e0f-0540546e9be3}</Project>
+      <Name>PR.WizPlant.Integrate.Csgii</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PR.WizPlant.Integrate.Scada\PR.WizPlant.Integrate.Scada.csproj">
+      <Project>{4bb3fc85-1bd1-43ba-b08c-f516a6d604f1}</Project>
+      <Name>PR.WizPlant.Integrate.Scada</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PR.WizPlant.Integrate.Sql\PR.WizPlant.Integrate.Sql.csproj">
+      <Project>{29dce5f1-eb7a-4623-b6f1-61096a825ceb}</Project>
+      <Name>PR.WizPlant.Integrate.Sql</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19893</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PR.WizPlant.Integrate.WcfHost</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

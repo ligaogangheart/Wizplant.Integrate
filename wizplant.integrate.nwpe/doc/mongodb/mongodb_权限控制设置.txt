@@ -1,0 +1,74 @@
+1.先移除 --auth 参数 （不启用权限控制）启动服务
+1.1 连接primary服务器，在admin库中创建用户，具备角色：userAdminAnyDatabase
+use admin
+# repl授权必须添加
+db.createUser({user:"replAdmin",pwd:"PEadmin",roles:["userAdminAnyDatabase"]})
+1.2 在业务数据库scadaDB中创建用户，具备readWrite角色
+use scadaDB
+db.createUser({user:"scadaUser",pwd:"PEadmin",roles:["readWrite"]}) //添加用户
+
+2. 配置服务启动参数 
+2.1 在启动服务时增加参数--auth （启用权限控制）
+2.2 在启动服务中增加参数 --keyFile $filepath (在replset集模式下必须使用，关于keyFile创建方式，请参考相关资料）
+2.3 启动服务 mongod ...
+
+3.客户端连接
+3.1 mongo命令行连接：mongo -uscadaUser -pPEadmin 10.181.48.148:9920/scadaDB （mongo -u用户名 -p用户密码 host:port/数据库）
+	或者 mongo 10.181.48.148:9920 再用db.auth(用户名，用户密码)登录
+3.2 连接字串：
+	mongodb://scadaUser:PEadmin@10.181.48.148:9920,10.181.48.148:9921/scadaDB?replicaSet=scadaReplSet&amp;readPreference=secondaryPreferred
+
+结束
+
+
+MongoDB中用户的角色说明
+read
+
+数据库的只读权限，包括：
+
+aggregate,checkShardingIndex,cloneCollectionAsCapped,collStats,count,dataSize,dbHash,dbStats,distinct,filemd5，mapReduce (inline output only.),text (beta feature.)geoNear,geoSearch,geoWalk,group
+readWrite
+
+数据库的读写权限，包括:
+
+    cloneCollection (as the target database.),convertToCapped，create (and to create collections implicitly.)，renameCollection (within the same database.)findAndModify,mapReduce (output to a collection.) drop(),dropIndexes,emptycapped,ensureIndex() 
+和read的所有权限
+
+dbAdmin
+
+clean,collMod,collStats,compact,convertToCappe create,db.createCollection(),dbStats,drop(),dropIndexes ensureIndex()，indexStats,profile,reIndex renameCollection (within a single database.),validate 
+userAdmin角色
+
+数据库的用户管理权限
+clusterAdmin角色
+
+集群管理权限(副本集、分片、主从等相关管理)，包括：
+
+addShard,closeAllDatabases,connPoolStats,connPoolSync,_cpuProfilerStart_cpuProfilerStop,cursorInfo,diagLogging,dropDatabase 
+shardingState,shutdown,splitChunk,splitVector,split,top,touchresync 
+serverStatus,setParameter,setShardVersion,shardCollection 
+replSetMaintenance,replSetReconfig,replSetStepDown,replSetSyncFrom 
+repairDatabase,replSetFreeze,replSetGetStatus,replSetInitiate 
+logRotate,moveChunk,movePrimary,netstat,removeShard,unsetSharding 
+hostInfo,db.currentOp(),db.killOp(),listDatabases,listShardsgetCmdLineOpts,getLog,getParameter,getShardMap,getShardVersion 
+enableSharding,flushRouterConfig,fsync,db.fsyncUnlock()
+readAnyDatabase
+
+任何数据库的只读权限(和read相似)
+
+readWriteAnyDatabase
+
+任何数据库的读写权限(和readWrite相似)
+
+userAdminAnyDatabase
+
+任何数据库用户的管理权限(和userAdmin相似)
+
+dbAdminAnyDatabase
+
+任何数据库的管理权限(dbAdmin相似)
+
+__system
+什么权限都有
+
+

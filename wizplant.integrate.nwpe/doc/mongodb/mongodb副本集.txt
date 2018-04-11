@@ -1,0 +1,19 @@
+config = {_id: "scadaReplSet", members: []}
+config.members.push({_id: 0, host: "localhost:9920"})
+config.members.push({_id: 1, host: "localhost:9921"})
+rs.initiate(config)
+rs.isMaster()
+rs.status()
+
+--增加副本集
+rs.add("localhost:9921")
+或者
+var config=rs.config()   
+config.members.push({_id: 1, host: "localhost:9921"})
+ rs.reconfig(config)    
+
+
+
+
+
+

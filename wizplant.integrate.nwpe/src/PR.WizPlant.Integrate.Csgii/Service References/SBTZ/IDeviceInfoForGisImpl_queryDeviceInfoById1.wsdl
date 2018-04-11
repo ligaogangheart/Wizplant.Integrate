@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sp.soa.csg.cn" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="IDeviceInfoForGisImpl_queryDeviceInfoById" targetNamespace="http://sp.soa.csg.cn" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://sp.soa.csg.cn" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="queryDeviceInfoByIdRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="deviceId" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="queryDeviceInfoByIdResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="replyCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="deviceGisDTO" type="tns:deviceGisDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deviceGisDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="deviceCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="deviceName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="classifyId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="classifyName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="isCapitalAssets" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isCapitalAssetsStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="proprietorCompanyOname" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="proprietorCompanyOid" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="baseVoltageId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="baseVoltageName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="voltagePageShow" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="isVirtualDevice" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isVirtualDeviceStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="measurementUnit" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="amount" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="manufacturer" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="manufacturerId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="latestManufacturer" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="vendor" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="vendorId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="deviceModel" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="leaveFactoryNo" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="leaveFactoryDateStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="warrantyPeriod" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="plantTransferDateStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="assetState" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="assetStateStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="statusDateStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="runningCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="latitude" type="xs:double" />
+          <xs:element minOccurs="0" form="qualified" name="longitude" type="xs:double" />
+          <xs:element minOccurs="0" form="qualified" name="latitudeStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="longitudeStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="altitude" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="topography" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="topographyStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="bureauUnitsOid" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="bureauUnitsOname" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="dispatchLevel" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="dispatchLevelStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="runmanageOid" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="runmanageOName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="vindicateOid" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="vindicateOName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="placeCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="flName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="flCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="installCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="remark" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="powerGridFlag" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="powerGridFlagStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="ownerStationOid" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="ownerStationOName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="countyCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="oldClassifyFullPath" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="oldAliasName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="isLabel" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isLabelStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="isAssambly" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isAssamblyStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="isShareDevice" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isShareDeviceStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="dataSource" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="licensePlateNumber" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="vindicatorUnitOname" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="vindicatorUnitOid" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="capitalAssetsCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="installationLocation" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="proprietorOwner" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="proprietorOwnerStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="useLife" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="deviceModelId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="deviceId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="retireDateStr" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="functionLocationId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="classifyCode" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="classifyFullPath" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="nominalVoltage" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="parentFLId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="parentFLName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="bayId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="bayName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="siteId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="siteName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="bureauName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="fullPath" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="centerSubstationId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="centerSubstationName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="subsIdOfDisDevice" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="subsNameOfDisDevice" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="inventoryTaskNo" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="assetDeviceId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="lstTechParamList">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" form="qualified" name="lstTechParamItem" type="tns:techParamValueGisDTO" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="techParamValueGisDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" form="qualified" name="classifyId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="classifyName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="techParamId" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="columnName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="techParamName" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="techParamValue" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="units" type="xs:string" />
+          <xs:element minOccurs="0" form="qualified" name="isMandatory" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isShow" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="sortNo" type="xs:int" />
+          <xs:element form="qualified" name="dataType" type="xs:int" />
+          <xs:element minOccurs="0" form="qualified" name="isVendorFill" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="queryDeviceInfoByIdRequest" nillable="true" type="tns:queryDeviceInfoByIdRequest" />
+      <xs:element name="queryDeviceInfoByIdResponse" nillable="true" type="tns:queryDeviceInfoByIdResponse" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="queryDeviceInfoByIdResponse">
+    <wsdl:part name="queryDeviceInfoByIdResponse" element="tns:queryDeviceInfoByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryDeviceInfoByIdRequest">
+    <wsdl:part name="queryDeviceInfoByIdRequest" element="tns:queryDeviceInfoByIdRequest" />
+  </wsdl:message>
+  <wsdl:portType name="IDeviceInfoForGisImpl_queryDeviceInfoById">
+    <wsdl:operation name="queryDeviceInfoById">
+      <wsdl:input name="queryDeviceInfoByIdRequest" message="tns:queryDeviceInfoByIdRequest" />
+      <wsdl:output name="queryDeviceInfoByIdResponse" message="tns:queryDeviceInfoByIdResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IDeviceInfoForGisImpl_queryDeviceInfoByIdSoapBinding" type="tns:IDeviceInfoForGisImpl_queryDeviceInfoById">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="queryDeviceInfoById">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="queryDeviceInfoByIdRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryDeviceInfoByIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IDeviceInfoForGisImpl_queryDeviceInfoById">
+    <wsdl:port name="IDeviceInfoForGisImpl_queryDeviceInfoByIdPort" binding="tns:IDeviceInfoForGisImpl_queryDeviceInfoByIdSoapBinding">
+      <soap:address location="http://10.111.243.54:8080/web/lcam/fwms/soa/cxf/TBIIDeviceInfoForGisImplqueryDeviceInfoById" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
